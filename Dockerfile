@@ -43,8 +43,6 @@ COPY --from=build /usr/src/app/target/*.jar /usr/app/app.jar
 
 
 
-
-
 RUN apt-get update -qq && apt-get install nodejs npm -y --no-install-recommends 
 
 
