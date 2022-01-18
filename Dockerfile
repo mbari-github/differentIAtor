@@ -4,17 +4,6 @@ RUN sudo -E curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get update -qq && apt-get install nodejs npm -y --no-install-recommends 
 
 
-# Downloading gcloud package
-RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-368.0.0-linux-arm.tar.gz
-
-# Installing the package
-RUN mkdir -p /usr/local/gcloud \
-  && tar -xf /google-cloud-sdk-368.0.0-linux-arm.tar.gz -C /usr/local/gcloud \
-  && /usr/local/gcloud/google-cloud-sdk/install.sh
-
-# Adding the package path to local
-ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
-
 # Stop running as root at this point
 RUN useradd -m myuser
 WORKDIR /usr/src/app/
