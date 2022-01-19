@@ -1,7 +1,6 @@
 package com.example.application.views.differentiatorvertexai;
 
 import com.google.api.client.util.Base64;
-
 import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1.EndpointName;
 import com.google.cloud.aiplatform.v1.PredictResponse;
