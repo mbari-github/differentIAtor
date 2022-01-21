@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- Vaadin project from https://start.vaadin.com/project/6e308ea9-d7e3-4617-9da7-f31d0aaf44d1 -->
+    <!-- Vaadin project from https://start.vaadin.com/project/2daf7edf-a028-4e3c-8867-992bd1174379 -->
     <groupId>com.example.application</groupId>
     <artifactId>differentiator</artifactId>
     <name>Project base for Spring Boot and Vaadin Flow</name>
@@ -61,65 +61,135 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- AGGIUNTI -->
+            
+            <dependency>
+              <groupId>com.google.cloud</groupId>
+              <artifactId>libraries-bom</artifactId>
+              <version>24.1.0</version>
+              <type>pom</type>
+              <scope>import</scope>
+            </dependency>
+
+            <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-gcp-dependencies</artifactId>
+              <version>1.2.8.RELEASE</version>
+              <type>pom</type>
+              <scope>import</scope>
+            </dependency>
+            <!-- AGGIUNTI FINO QUI-->
         </dependencies>
     </dependencyManagement>
 
+    
     <dependencies>
+      <dependency>
+        <groupId>com.vaadin</groupId>
+        <!-- Replace artifactId with vaadin-core to use only free components -->
+        <artifactId>vaadin</artifactId>
+        <exclusions>
+            <!-- Webjars are only needed when running in Vaadin 13 compatibility mode -->
+            <exclusion>
+                <groupId>com.vaadin.webjar</groupId>
+                <artifactId>*</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.webjars.bowergithub.insites</groupId>
+                <artifactId>*</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.webjars.bowergithub.polymer</groupId>
+                <artifactId>*</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.webjars.bowergithub.polymerelements</groupId>
+                <artifactId>*</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.webjars.bowergithub.vaadin</groupId>
+                <artifactId>*</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.webjars.bowergithub.webcomponents</groupId>
+                <artifactId>*</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-spring-boot-starter</artifactId>
+      <exclusions>
+          <!-- Excluding so that webjars are not included. -->
+          <exclusion>
+              <groupId>com.vaadin</groupId>
+              <artifactId>vaadin-core</artifactId>
+          </exclusion>
+      </exclusions>
+  </dependency>
+  <dependency>
+    <groupId>org.vaadin.artur</groupId>
+    <artifactId>a-vaadin-helper</artifactId>
+    <version>1.7.1</version>
+</dependency>
+
+        <!-- AGGIUNTE-->
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <!-- Replace artifactId with vaadin-core to use only free components -->
-            <artifactId>vaadin</artifactId>
-            <exclusions>
-                <!-- Webjars are only needed when running in Vaadin 13 compatibility mode -->
-                <exclusion>
-                    <groupId>com.vaadin.webjar</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.insites</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.polymer</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.polymerelements</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.vaadin</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.webjars.bowergithub.webcomponents</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>libraries-bom</artifactId>
+          <version>24.1.0</version>
+          <type>pom</type>
+          <scope>import</scope>
         </dependency>
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-spring-boot-starter</artifactId>
-            <exclusions>
-                <!-- Excluding so that webjars are not included. -->
-                <exclusion>
-                    <groupId>com.vaadin</groupId>
-                    <artifactId>vaadin-core</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-gcp-dependencies</artifactId>
+            <version>1.2.8.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
-        <dependency>
-            <groupId>org.vaadin.artur</groupId>
-            <artifactId>a-vaadin-helper</artifactId>
-            <version>1.7.1</version>
-        </dependency>
-        
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-aiplatform</artifactId>
-            <version>0.4.0</version>
-          </dependency>
-
+            <version>2.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>com.google.api</groupId>
+          <artifactId>gax</artifactId>
+          <version>2.3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>2.3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-gcp-starter-logging</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>4.9.3</version>
+      </dependency>
+      <dependency>
+        <groupId>backport-util-concurrent</groupId>
+        <artifactId>backport-util-concurrent</artifactId>
+        <version>3.1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-core</artifactId>
+        <version>9.0.56</version>
+    </dependency>
+<!-- AGGIUNTE FINO QUI-->
+        
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -161,111 +231,114 @@
     </dependencies>
 
     <build>
-        <defaultGoal>spring-boot:run</defaultGoal>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- Clean build and startup time for Vaadin apps sometimes may exceed
-                     the default Spring Boot's 30sec timeout.  -->
-                <configuration>
-                    <wait>500</wait>
-                    <maxAttempts>240</maxAttempts>
-                </configuration>
-            </plugin>
+      <defaultGoal>spring-boot:run</defaultGoal>
+      <plugins>
+          <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+              <configuration>
+                  <wait>500</wait>
+                  <maxAttempts>240</maxAttempts>
+              </configuration>
+          </plugin>
 
-            <!--
-                Take care of synchronizing java dependencies and imports in
-                package.json and main.js files.
-                It also creates webpack.config.js if not exists yet.
-            -->
-            <plugin>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-frontend</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
-    <profiles>
-        <profile>
-            <!-- Production mode is activated using -Pproduction -->
-            <id>production</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.vaadin</groupId>
-                        <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${vaadin.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>build-frontend</goal>
-                                </goals>
-                                <phase>compile</phase>
-                            </execution>
-                        </executions>
-                        <configuration>
-                             <productionMode>true</productionMode>
-                            <pnpmEnable>false</pnpmEnable>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+          <plugin>
+              <groupId>com.vaadin</groupId>
+              <artifactId>vaadin-maven-plugin</artifactId>
+              <version>${vaadin.version}</version>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>prepare-frontend</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+      </plugins>
+  </build>
 
-        <profile>
-            <id>it</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>start-spring-boot</id>
-                                <phase>pre-integration-test</phase>
-                                <goals>
-                                    <goal>start</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>stop-spring-boot</id>
-                                <phase>post-integration-test</phase>
-                                <goals>
-                                    <goal>stop</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+  <profiles>
+      <profile>
+          <!-- Production mode is activated using -Pproduction -->
+          <id>production</id>
+          <build>
+              <plugins>
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>appengine-maven-plugin</artifactId>
+                    <version>2.2.0</version>
+                    <configuration>
+                      <version>1</version>
+                      <projectId>GCLOUD_CONFIG</projectId>
+                    </configuration>
+                  </plugin>
+                  <plugin>
+                      <groupId>com.vaadin</groupId>
+                      <artifactId>vaadin-maven-plugin</artifactId>
+                      <version>${vaadin.version}</version>
+                      <executions>
+                          <execution>
+                              <goals>
+                                  <goal>build-frontend</goal>
+                              </goals>
+                              <phase>compile</phase>
+                          </execution>
+                      </executions>
+                      <configuration>
+                           <productionMode>true</productionMode>
+                          <pnpmEnable>false</pnpmEnable>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
 
-                    <!-- Runs the integration tests (*IT) after the server is started -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <trimStackTrace>false</trimStackTrace>
-                            <enableAssertions>true</enableAssertions>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+      <profile>
+          <id>it</id>
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.springframework.boot</groupId>
+                      <artifactId>spring-boot-maven-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <id>start-spring-boot</id>
+                              <phase>pre-integration-test</phase>
+                              <goals>
+                                  <goal>start</goal>
+                              </goals>
+                          </execution>
+                          <execution>
+                              <id>stop-spring-boot</id>
+                              <phase>post-integration-test</phase>
+                              <goals>
+                                  <goal>stop</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
 
-    </profiles>
+                  <!-- Runs the integration tests (*IT) after the server is started -->
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-failsafe-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <goals>
+                                  <goal>integration-test</goal>
+                                  <goal>verify</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                      <configuration>
+                          <trimStackTrace>false</trimStackTrace>
+                          <enableAssertions>true</enableAssertions>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+
+  </profiles>
 </project>

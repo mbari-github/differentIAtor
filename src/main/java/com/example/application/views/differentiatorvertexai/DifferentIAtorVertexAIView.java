@@ -2,13 +2,13 @@ package com.example.application.views.differentiatorvertexai;
 
 
 
-import java.awt.Graphics2D;
+/*import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO;*/
 import java.io.IOException;
 
 
@@ -27,10 +27,11 @@ import com.vaadin.flow.component.upload.receivers.FileData;
 import com.vaadin.flow.router.Route;
 
 
+
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Image;
+//import com.vaadin.flow.component.html.Image;
 
 import com.vaadin.flow.router.PageTitle;
 
@@ -51,19 +52,18 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         setSpacing(false);
 
         conferma.setVisible(false);
-        
-        Image img = new Image("images/empty-plant.png", "placeholder plant");
-        img.setWidth("200px");
-       
+ 
         ///Inizio uploader
     
         FileBuffer buffer = new FileBuffer();
         Upload upload = new Upload(buffer);
         upload.setDropAllowed(true);
-
-        upload.setHeight("200px");
-        upload.setWidth("400px");
         
+        upload.setHeight("200px");
+        upload.setWidth("250px");
+        int maxFileSizeInBytes = 1 * 1024 * 1024; // 10MB
+        upload.setMaxFileSize(maxFileSizeInBytes);
+
 
         upload.setAcceptedFileTypes("image/*");
 
@@ -90,12 +90,12 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         conferma.addClickListener(click-> {
 
         try {
-          BufferedImage originalImage = ImageIO.read(new File(absolutePath));
+         /* BufferedImage originalImage = ImageIO.read(new File(absolutePath));
           BufferedImage outputImage = resizeImage(originalImage, 400, 400);
           ImageIO.write(outputImage, "jpg", new File("src\\main\\temp\\immmagine-temp.jpg"));
-  
-          String prediction = PIC.predictImageClassification("boxwood-yen-330120", "src\\main\\temp\\immmagine-temp.jpg", "5969881945893502976");
-          Files.deleteIfExists(Paths.get("src\\main\\temp\\immmagine-temp.jpg"));
+  */
+          String prediction = PIC.predictImageClassification("dulcet-answer-333112", absolutePath, "7816217055627051008");
+        //  Files.deleteIfExists(Paths.get("src\\main\\temp\\immmagine-temp.jpg"));
 
           risultato.setText(prediction);
           
@@ -128,11 +128,11 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         );
     }
 
-    static BufferedImage resizeImage(BufferedImage originalImage, int targetWidth, int targetHeight) {
+    /*static BufferedImage resizeImage(BufferedImage originalImage, int targetWidth, int targetHeight) {
         BufferedImage resizedImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics2D = resizedImage.createGraphics();
         graphics2D.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
         graphics2D.dispose();
         return resizedImage;
-    }
+    }*/
 }
