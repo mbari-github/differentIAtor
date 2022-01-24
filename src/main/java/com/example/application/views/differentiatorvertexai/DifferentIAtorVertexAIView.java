@@ -47,7 +47,12 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
     Button conferma = new Button("Vertex IA");
     String absolutePath = " ";
     H1 risultato = new H1(" ");
-    
+    long startTime;
+    long endTime;
+    long durata;
+
+
+
     public DifferentIAtorVertexAIView() {
         setSpacing(false);
 
@@ -61,7 +66,7 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         
         upload.setHeight("200px");
         upload.setWidth("250px");
-        int maxFileSizeInBytes = 1 * 1024 * 1024; // 10MB
+        int maxFileSizeInBytes = 1 * 1024 * 1024; // 1MB
         upload.setMaxFileSize(maxFileSizeInBytes);
 
 
@@ -89,6 +94,8 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
     ////Fine uploader
         conferma.addClickListener(click-> {
 
+          startTime = System.nanoTime();
+
         try {
          /* BufferedImage originalImage = ImageIO.read(new File(absolutePath));
           BufferedImage outputImage = resizeImage(originalImage, 400, 400);
@@ -99,7 +106,10 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
 
           risultato.setText(prediction);
           
-  
+          endTime = System.nanoTime();
+
+          durata = endTime - startTime;
+          System.out.println("Il tempo impegato per esecuzione task:  " + durata);
         } catch (IOException e) {
   
           System.out.print("---------------------------Eccezione inizia ora ------------------------------------------");
