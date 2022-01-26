@@ -26,12 +26,6 @@ public class OggiView extends LitTemplate implements HasComponents {
 
         
         
-        
-       
-        
-        
-        
-        
         ImageCard imagecard1 = new ImageCard("Raccolta differenziata",
                 "https://www.comune.tavagnacco.ud.it/var/opencitytavagnacco/storage/images/media/images/servizi_raccolta-differenziata/624620-4-ita-IT/Servizi_Raccolta-differenziata_reference.jpg",
                 "Raccolta differenziata",
@@ -40,11 +34,6 @@ public class OggiView extends LitTemplate implements HasComponents {
                 "https://www.nonsprecare.it/come-fare-la-raccolta-differenziata");
                 
         
-        
-        //https://www.nonsprecare.it/come-fare-la-raccolta-differenziata
-                
-       
-       
        
         ImageCard imagecard2 = new ImageCard("Raccolta rifiuti elettronici",
                 "https://www.rinnovabili.it/wp-content/uploads/2020/05/08162e780d42455e7de0ac92d4d31cbc-e1588861265354.jpg",
@@ -52,10 +41,7 @@ public class OggiView extends LitTemplate implements HasComponents {
                 " ",
                 "Tv, cellulari, ma anche robot da cucina, computer, modem, pennette USB, frigoriferi, lavatrici e altri elettrodomestici non sono spazzatura qualsiasi, ma sono RAEE, rifiuti da apparecchiature elettriche ed elettroniche, cioè rifiuti speciali il cui ... ",
                 "https://www.nonsprecare.it/rifiuti-elettronici-come-smaltirli-in-modo-corretto?refresh_cens"
-                );
-        //https://www.nonsprecare.it/rifiuti-elettronici-come-smaltirli-in-modo-corretto?refresh_cens
-        
-       
+                );        
        
        
         ImageCard imagecard3 =new ImageCard("Deforestazione",
@@ -65,10 +51,7 @@ public class OggiView extends LitTemplate implements HasComponents {
                 "Il problema della deforestazione colpisce molte aree del Pianeta, ma in particolare quelle aree che forniscono legname pregiato e purtroppo sono anche più ricche di biodiversità come le foreste pluviali e tropicali. Negli ultimi 30 anni ... ",
                 "https://www.wwf.it/cosa-facciamo/foreste/deforestazione/"
                 );
-        //https://www.wwf.it/cosa-facciamo/foreste/deforestazione/
 
-      
-      
       
         ImageCard imagecard4 =new ImageCard("Ocean Cleanup",
                 "https://www.futuroprossimo.it/wp-content/uploads/2020/10/P1111502-1280x720-1.jpg",
@@ -77,10 +60,7 @@ public class OggiView extends LitTemplate implements HasComponents {
                 "The Ocean Cleanup is a non-profit organization developing and scaling technologies to rid the oceans of plastic. To achieve this objective, we have to work on a combination of closing the source and cleaning up what has already accumulated in ... ",
                 "https://theoceancleanup.com"
                 );
-        //https://theoceancleanup.com
-
-       
-       
+              
        
         ImageCard imagecard5 =new ImageCard("Isola di plastica",
                 "https://www.culligan.it/wp-content/uploads/2021/05/mare-plastica.jpg",
@@ -90,8 +70,6 @@ public class OggiView extends LitTemplate implements HasComponents {
                 "https://www.nieddittas.it/2021/07/cosa-sono-le-isole-di-plastica/"
                 );
           
-        //https://www.nieddittas.it/2021/07/cosa-sono-le-isole-di-plastica/
-
       
       
         ImageCard imagecard6 =new ImageCard("A.I. per la raccolta rifiuti ",
@@ -100,9 +78,7 @@ public class OggiView extends LitTemplate implements HasComponents {
                 " ",
                 "La ricerca Data Augmentation Using Background Replacement for Automated Sorting of Littered Waste, condotta dall'Università degli Studi di Roma Tor Vergata ha come obiettivo quello di costruire sistemi di smistamento automatico dei rifiuti per identificare e ... ",
                 "https://www.adnkronos.com/lintelligenza-artificiale-che-riconosce-i-rifiuti-nellambiente_1TfepnC3MuX2kBwkx3f56x"
-                );
-        //https://www.adnkronos.com/lintelligenza-artificiale-che-riconosce-i-rifiuti-nellambiente_1TfepnC3MuX2kBwkx3f56x
-    
+                );    
     
     add(
             imagecard1,

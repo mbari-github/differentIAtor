@@ -5,17 +5,11 @@ package com.example.application.views.differentiatorvertexai;
 /*import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import javax.imageio.ImageIO;*/
 import java.io.IOException;
-
-
-
 import com.vaadin.flow.component.button.Button;
-
-
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -23,19 +17,14 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
 import com.vaadin.flow.component.upload.receivers.FileData;
-
 import com.vaadin.flow.router.Route;
-
-
-
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 //import com.vaadin.flow.component.html.Image;
-
 import com.vaadin.flow.router.PageTitle;
-
 import com.vaadin.flow.router.RouteAlias;
+
 
 @PageTitle("DifferentIAtor | Vertex AI")
 @Route(value = "differentiator", layout = MainLayout.class)
@@ -54,30 +43,27 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
 
 
     public DifferentIAtorVertexAIView() {
-        setSpacing(false);
+        
+      setSpacing(false);
 
-        conferma.setVisible(false);
+      conferma.setVisible(false);
  
-        ///Inizio uploader
-    
+        
         FileBuffer buffer = new FileBuffer();
         Upload upload = new Upload(buffer);
         upload.setDropAllowed(true);
-        
         upload.setHeight("200px");
         upload.setWidth("250px");
+
         int maxFileSizeInBytes = 1 * 1024 * 1024; // 1MB
         upload.setMaxFileSize(maxFileSizeInBytes);
-
-
         upload.setAcceptedFileTypes("image/*");
+
 
         upload.addSucceededListener(event -> {
         FileData savedFileData = buffer.getFileData();
         absolutePath = savedFileData.getFile().getAbsolutePath();
         conferma.setVisible(true);
-        
-        
             });
 
 
@@ -91,11 +77,9 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
               });
 
-    ////Fine uploader
+    
         conferma.addClickListener(click-> {
-
           startTime = System.nanoTime();
-
         try {
          /* BufferedImage originalImage = ImageIO.read(new File(absolutePath));
           BufferedImage outputImage = resizeImage(originalImage, 400, 400);
@@ -103,20 +87,15 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
   */
           String prediction = PIC.predictImageClassification("dulcet-answer-333112", absolutePath, "7816217055627051008");
         //  Files.deleteIfExists(Paths.get("src\\main\\temp\\immmagine-temp.jpg"));
-
           risultato.setText(prediction);
           
           endTime = System.nanoTime();
-
           durata = endTime - startTime;
           System.out.println("Il tempo impegato per esecuzione task:  " + durata);
+
         } catch (IOException e) {
-  
-          System.out.print("---------------------------Eccezione inizia ora ------------------------------------------");
-          
           e.printStackTrace();
         }
-  
       });
         
 
