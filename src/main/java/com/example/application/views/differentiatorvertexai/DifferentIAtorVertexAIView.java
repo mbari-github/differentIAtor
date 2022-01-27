@@ -49,7 +49,6 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
       setSpacing(false);
 
       conferma.setVisible(false);
-      getStyle().set("background-image", "images/empty-plant.png");
         
         FileBuffer buffer = new FileBuffer();
         Upload upload = new Upload(buffer);
@@ -57,7 +56,7 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         upload.setHeight("100px");
         upload.setWidth("250px");
 
-        int maxFileSizeInBytes = 1500000; // 1.5 MB
+        int maxFileSizeInBytes = 1450000; // 1.45 MB
         upload.setMaxFileSize(maxFileSizeInBytes);
         upload.setAcceptedFileTypes("image/*");
 
