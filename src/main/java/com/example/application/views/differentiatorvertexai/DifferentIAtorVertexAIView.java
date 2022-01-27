@@ -21,9 +21,11 @@ import com.vaadin.flow.router.Route;
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Paragraph;
 //import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouteAlias;
+
 
 
 @PageTitle("DifferentIAtor | Vertex AI")
@@ -47,15 +49,15 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
       setSpacing(false);
 
       conferma.setVisible(false);
- 
+      getStyle().set("background-image", "images/empty-plant.png");
         
         FileBuffer buffer = new FileBuffer();
         Upload upload = new Upload(buffer);
         upload.setDropAllowed(true);
-        upload.setHeight("200px");
+        upload.setHeight("100px");
         upload.setWidth("250px");
 
-        int maxFileSizeInBytes = 1 * 1024 * 1024; // 1MB
+        int maxFileSizeInBytes = 1500000; // 1.5 MB
         upload.setMaxFileSize(maxFileSizeInBytes);
         upload.setAcceptedFileTypes("image/*");
 
@@ -104,7 +106,8 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
         getStyle().set("text-align", "center");
 
-        H2 info = new H2("Carica la tua immagine da far riconoscere alla nostra IA differentIAtor.");
+        H2 info = new H2("Carica la tua immagine da far riconoscere.");
+        Paragraph p = new Paragraph("Al momento la dimensione massima della foto è di 1.5 MB");
         
         HorizontalLayout horizontalLayout = new HorizontalLayout();
         horizontalLayout.add(upload,conferma);
@@ -112,6 +115,7 @@ public class DifferentIAtorVertexAIView extends VerticalLayout {
 
         add(
         info,
+        p,
         horizontalLayout,
         risultato
         );
