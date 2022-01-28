@@ -21,7 +21,7 @@ import java.util.List;
 
 public class PIC {
 
-    
+   //FIXME: sostituire libreira com.google.api.client.util.Base64 (deprecated) 
 
     static String predictImageClassification(String project, String fileName, String endpointId)
     throws IOException {
