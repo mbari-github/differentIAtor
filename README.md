@@ -1,7 +1,9 @@
 # DifferentIAtor
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This is a Java-Maven web app, built with the Vaadin framework. The main focus in this app is the A.I. that identifies the material of the photo the user uploads.
+For creating the A.I. we used GCP (Google Cloud Platform) that made the creation and deployment of the A.I. model really easy and fast.
+We even used GCP to deploy our app. So it's necessary to have a GCP account to re-build this app on your machine. 
+Instead the app will work just fine till 5th of February. 
 
 ## Running the application
 
@@ -33,7 +35,7 @@ Once the JAR file is built, you can run it using
 - `themes` folder in `frontend/` contains the custom CSS styles.
 
 ## Useful links
-
+For Vaadin:
 - Read the documentation at [vaadin.com/docs](https://vaadin.com/docs).
 - Follow the tutorials at [vaadin.com/tutorials](https://vaadin.com/tutorials).
 - Watch training videos and get certified at [vaadin.com/learn/training](https://vaadin.com/learn/training).
@@ -45,3 +47,7 @@ Once the JAR file is built, you can run it using
 - Find Add-ons at [vaadin.com/directory](https://vaadin.com/directory).
 - Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vaadin) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
 - Report issues, create pull requests in [GitHub](https://github.com/vaadin/platform).
+
+For GCP:
+-Read all the docs at [cloud.google.com/docs](https://cloud.google.com/docs).
+-Read the documentation on Vertex IA and AutoML at [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai/?utm_source=google&utm_medium=cpc&utm_campaign=emea-it-all-en-dr-bkws-all-all-trial-e-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_574628515915-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20%20AI%20%26%20ML%20~%20Vertex%20AI-KWID_43700066526085594-aud-606988877734%3Akwd-1428144711495-userloc_1008080&utm_term=KW_gcp%20vertex%20ai-NET_g-PLAC_&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff2P7wCR5CJJOri3EgNAHRDBKCJttoiv0B7tvm6a7eWu9ZWlNQeb-g0aAhCAEALw_wcB&gclsrc=aw.ds)
