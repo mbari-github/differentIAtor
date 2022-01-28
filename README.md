@@ -49,5 +49,5 @@ For Vaadin:
 - Report issues, create pull requests in [GitHub](https://github.com/vaadin/platform).
 
 For GCP:
--Read all the docs at [cloud.google.com/docs](https://cloud.google.com/docs).
--Read the documentation on Vertex IA and AutoML at [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai/?utm_source=google&utm_medium=cpc&utm_campaign=emea-it-all-en-dr-bkws-all-all-trial-e-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_574628515915-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20%20AI%20%26%20ML%20~%20Vertex%20AI-KWID_43700066526085594-aud-606988877734%3Akwd-1428144711495-userloc_1008080&utm_term=KW_gcp%20vertex%20ai-NET_g-PLAC_&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff2P7wCR5CJJOri3EgNAHRDBKCJttoiv0B7tvm6a7eWu9ZWlNQeb-g0aAhCAEALw_wcB&gclsrc=aw.ds)
+- Read all the docs at [cloud.google.com/docs](https://cloud.google.com/docs).
+- Read the documentation on Vertex IA and AutoML at [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai/?utm_source=google&utm_medium=cpc&utm_campaign=emea-it-all-en-dr-bkws-all-all-trial-e-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_574628515915-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20%20AI%20%26%20ML%20~%20Vertex%20AI-KWID_43700066526085594-aud-606988877734%3Akwd-1428144711495-userloc_1008080&utm_term=KW_gcp%20vertex%20ai-NET_g-PLAC_&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff2P7wCR5CJJOri3EgNAHRDBKCJttoiv0B7tvm6a7eWu9ZWlNQeb-g0aAhCAEALw_wcB&gclsrc=aw.ds)
